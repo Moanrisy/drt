@@ -168,14 +168,6 @@ func drawBox(s tcell.Screen, x1, y1, x2, y2 int, style tcell.Style, text string)
 	drawText(s, x1+1, y1+1, x2-1, y2-1, style, text)
 }
 
-func Map(e *manta.Entity) map[string]interface{} {
-	values := make(map[string]interface{})
-	for _, fp := range e.Class.GetFieldPaths(manta.NewFieldPath(), e.State) {
-		values[e.Class.GetNameForFieldPath(fp)] = e.State.Get(fp)
-	}
-	return values
-}
-
 func parse(id string, file *os.File) (map[uint32]map[string]pos, error) {
 	f, err := os.Open(fmt.Sprintf("%s.dem", id))
 	if err != nil {
