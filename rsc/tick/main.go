@@ -18,12 +18,19 @@ type pos struct {
 }
 
 func main() {
+	// Open or create a file for writing
+	file, err := os.Create("output.txt")
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
+	defer file.Close()
+
 	if len(os.Args) < 2 {
 		log.Fatal("id not supplied")
 	}
 	id := os.Args[1]
 	// TODO: inmem map is not the best way to approach this
-	m, err := parse(id)
+	m, err := parse(id, file)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -161,7 +168,15 @@ func drawBox(s tcell.Screen, x1, y1, x2, y2 int, style tcell.Style, text string)
 	drawText(s, x1+1, y1+1, x2-1, y2-1, style, text)
 }
 
-func parse(id string) (map[uint32]map[string]pos, error) {
+func Map(e *manta.Entity) map[string]interface{} {
+	values := make(map[string]interface{})
+	for _, fp := range e.Class.GetFieldPaths(manta.NewFieldPath(), e.State) {
+		values[e.Class.GetNameForFieldPath(fp)] = e.State.Get(fp)
+	}
+	return values
+}
+
+func parse(id string, file *os.File) (map[uint32]map[string]pos, error) {
 	f, err := os.Open(fmt.Sprintf("%s.dem", id))
 	if err != nil {
 		return nil, err
@@ -175,6 +190,20 @@ func parse(id string) (map[uint32]map[string]pos, error) {
 
 	units := make(map[uint32]map[string]pos)
 	p.OnEntity(func(e *manta.Entity, op manta.EntityOp) error {
+		// e.Dump()
+
+		if p.Tick <= 24000 {
+			return nil
+		}
+
+		fmt.Fprintf(file, "%v --- %s %v\n", p.Tick, e.String(), e.Map())
+		fmt.Println(p.Tick)
+
+		if p.Tick >= 24200 {
+			p.Stop()
+			return nil
+		}
+
 		c := e.GetClassName()
 		if !strings.HasPrefix(c, "CDOTA_Unit_Hero_") {
 			return nil
