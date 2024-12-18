@@ -1,0 +1,390 @@
+{
+  "2": {
+    "CDOTAFogOfWarTempViewers": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAGameManagerProxy": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAGamerulesProxy": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAPlayerController": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAPlayerPawn": {
+      "CX": 128,
+      "CY": 122,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTASpectatorGraphManagerProxy": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTATeam": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataCustomTeam": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataDire": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataRadiant": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataSpectator": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_PlayerResource": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Unit_Announcer": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Unit_Announcer_Killing_Spree": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    },
+    "CInfoPlayerStartBadGuys": {
+      "CX": 184,
+      "CY": 174,
+      "VX": 0,
+      "VY": 0
+    },
+    "CInfoPlayerStartGoodGuys": {
+      "CX": 72,
+      "CY": 78,
+      "VX": 0,
+      "VY": 0
+    },
+    "CIngameEvent_Crownfall": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    },
+    "CIngameEvent_DotaPlus": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    },
+    "CIngameEvent_PermanentGrants": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    },
+    "CSpeechBubbleManager": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CWorld": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    }
+  },
+  "5814": {
+    "CBaseEntity": {
+      "CX": 130,
+      "CY": 126,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTACameraBounds": {
+      "CX": 124,
+      "CY": 118,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAFogOfWarTempViewers": {
+      "CX": 128,
+      "CY": 128,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAGamerulesProxy": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAPlayerController": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAPlayerPawn": {
+      "CX": 128,
+      "CY": 122,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTAWearableItem": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Ability_AbyssalUnderlord_Portal_Warp": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Ability_BackdoorProtection": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Ability_BackdoorProtectionInBase": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Ability_Creep_Siege": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_Barracks": {
+      "CX": 158,
+      "CY": 174,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_Filler": {
+      "CX": 94,
+      "CY": 86,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_Fort": {
+      "CX": 80,
+      "CY": 86,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_HallofFame": {
+      "CX": 68,
+      "CY": 80,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_MangoTree": {
+      "CX": 188,
+      "CY": 88,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_NeutralItemStash": {
+      "CX": 186,
+      "CY": 176,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_Shop": {
+      "CX": 88,
+      "CY": 142,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_Tower": {
+      "CX": 176,
+      "CY": 110,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_BaseNPC_Watch_Tower": {
+      "CX": 86,
+      "CY": 186,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataCustomTeam": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataDire": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataRadiant": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_DataSpectator": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Item_RuneSpawner_Bounty": {
+      "CX": 144,
+      "CY": 96,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Item_RuneSpawner_Powerup": {
+      "CX": 136,
+      "CY": 118,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Item_RuneSpawner_XP": {
+      "CX": 64,
+      "CY": 124,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_MinibossSpawner": {
+      "CX": 190,
+      "CY": 136,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_NPC_BaseBlocker": {
+      "CX": 184,
+      "CY": 146,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_NPC_Lantern": {
+      "CX": 120,
+      "CY": 188,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_NeutralSpawner": {
+      "CX": 164,
+      "CY": 70,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_RoshanSpawner": {
+      "CX": 188,
+      "CY": 66,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Unit_Fountain": {
+      "CX": 68,
+      "CY": 72,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDOTA_Unit_Twin_Gate": {
+      "CX": 174,
+      "CY": 72,
+      "VX": 0,
+      "VY": 0
+    },
+    "CDynamicProp": {
+      "CX": 190,
+      "CY": 136,
+      "VX": 0,
+      "VY": 0
+    },
+    "CFogController": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CInfoPlayerStartBadGuys": {
+      "CX": 184,
+      "CY": 174,
+      "VX": 0,
+      "VY": 0
+    },
+    "CInfoPlayerStartDota": {
+      "CX": 188,
+      "CY": 66,
+      "VX": 0,
+      "VY": 0
+    },
+    "CInfoPlayerStartGoodGuys": {
+      "CX": 72,
+      "CY": 78,
+      "VX": 0,
+      "VY": 0
+    },
+    "CInfoWorldLayer": {
+      "CX": 82,
+      "CY": 88,
+      "VX": 0,
+      "VY": 0
+    },
+    "CParticleSystem": {
+      "CX": 180,
+      "CY": 96,
+      "VX": 0,
+      "VY": 0
+    },
+    "CRagdollManager": {
+      "CX": 0,
+      "CY": 0,
+      "VX": 0,
+      "VY": 0
+    },
+    "CTonemapController2": {
+      "CX": 88,
+      "CY": 60,
+      "VX": 0,
+      "VY": 0
+    }
+  }
+}

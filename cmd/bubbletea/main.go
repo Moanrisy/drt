@@ -18,6 +18,8 @@ import (
 	"github.com/charmbracelet/lipgloss"
 	"github.com/dotabuff/manta"
 	"github.com/ronaudinho/drt/cmd/bubbletea/internal"
+	"github.com/rs/zerolog"
+	zlog "github.com/rs/zerolog/log"
 )
 
 const (
@@ -277,7 +279,9 @@ func tick() tea.Cmd {
 
 func loadReplayData() tea.Cmd {
 	return func() tea.Msg {
-		mapPositions, err := parse("7569667371")
+		// TODO: why you hardcoded the replay id here. atleast put it in the top la
+		// TODO: write in the makefile where you should put the replay file
+		mapPositions, err := parse("8084602562")
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -472,6 +476,24 @@ func (m drtModel) View() string {
 	return baseStyle.Render(s) + "\n"
 }
 
+func loadReplayFile(id string) (*os.File, error) {
+	f, err := os.Open(fmt.Sprintf("%s.dem", id))
+	if err != nil {
+		zlog.Error().Msg("\n Failed to load the replay file, maybe the download failed and the file is missing.")
+		return nil, err
+	}
+
+	return f, nil
+}
+
+func Map(e *manta.Entity) map[string]interface{} {
+	values := make(map[string]interface{})
+	for _, fp := range e.Class.GetFieldPaths(manta.NewFieldPath(), e.State) {
+		values[e.Class.GetNameForFieldPath(fp)] = e.State.Get(fp)
+	}
+	return values
+}
+
 func parse(id string) (map[uint32]map[string]pos, error) {
 	f, err := os.Open(fmt.Sprintf("%s.dem", id))
 	if err != nil {
@@ -485,10 +507,22 @@ func parse(id string) (map[uint32]map[string]pos, error) {
 	}
 
 	units := make(map[uint32]map[string]pos)
-	p.OnEntity(func(e *manta.Entity, _ manta.EntityOp) error {
+	p.OnEntity(func(e *manta.Entity, op manta.EntityOp) error {
+		// e.Dump()
+		if p.Tick <= 24000 {
+			return nil
+		}
+		fmt.Fprintf(file, "%v --- %s %v\n", p.Tick, e.String(), e.Map())
+		fmt.Println(p.Tick)
+		if p.Tick >= 24200 {
+			p.Stop()
+			return nil
+		}
+
 		c := e.GetClassName()
 		if !strings.HasPrefix(c, "CDOTA_Unit_Hero_") {
-			return nil
+			// BUG: need to commented out because at start this always be NIL?
+			// return nil
 		}
 		c = strings.TrimPrefix(c, "CDOTA_Unit_Hero_")
 		// TODO: find a way to get timestamp instead
@@ -519,10 +553,41 @@ func parse(id string) (map[uint32]map[string]pos, error) {
 	// TODO: json? really?
 	b, _ := json.MarshalIndent(units, "", "  ")
 	os.WriteFile(fmt.Sprintf("%s.json", id), b, 0666)
+
+	zlog.Debug().
+		Interface("units", units).
+		Msg("state of units AFTER parsed")
+
 	return units, nil
 }
 
+func initZlog() *os.File {
+	file, err := os.Create("logfile.log")
+	if err != nil {
+		log.Fatal()
+	}
+
+	zlog.Logger = zerolog.New(file).With().Timestamp().Logger()
+
+	// Example zlog entries
+	zlog.Info().Msg("Debug DRT in main.go started")
+	// zlog.Warn().Msg("This is a warning message")
+	// zlog.Error().Msg("This is an error message")
+
+	return file
+}
+
 func main() {
+	// Open or create a file for writing
+	file, err := os.Create("output.txt")
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
+	defer file.Close()
+
+	zfile := initZlog()
+	defer zfile.Close()
+
 	p := tea.NewProgram(newModel())
 	if _, err := p.Run(); err != nil {
 		fmt.Println("Error running program: ", err)
